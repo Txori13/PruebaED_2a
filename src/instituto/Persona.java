@@ -9,13 +9,18 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.Objects;
 
+/**
+ * Clase que representa a una persona del instituto.
+ * * @author Jaime Fuertes Arana
+ * @version 1.0
+ */
+
 public class Persona implements Comparable<Persona> {
 
     private Nif nif;
     private String nombre;
     private char genero;
     private LocalDate nacimiento;
-
     public Persona() {
         nif = new Nif();
         nombre = "";
@@ -27,6 +32,15 @@ public class Persona implements Comparable<Persona> {
         this();
         this.nif = new Nif(nif);
     }
+    /**
+     * Constructor completo de la clase Persona.
+     * * @param nif El DNI de la persona (sin letra)
+     * @param nombre El nombre y apellidos
+     * @param genero El género ('H' o 'M')
+     * @param dia El día de nacimiento
+     * @param mes El mes de nacimiento
+     * @param ano El año de nacimiento
+     */
 
     public Persona(int nif, String nombre, char genero,
             int dia, int mes, int ano) {
@@ -69,6 +83,11 @@ public class Persona implements Comparable<Persona> {
         this.nacimiento = nacimiento;
     }
 
+    /**
+     * Calcula la edad actual basándose en la fecha de nacimiento.
+     * * @return La edad en años
+     */
+    
     public int getEdad() {
         return Period.between(nacimiento, LocalDate.now()).getYears();
     }
