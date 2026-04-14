@@ -8,8 +8,9 @@ package instituto;
 import java.util.TreeSet;
 
 /**
- *
- * @author ProfDiurno
+ * Clase que gestiona un curso y su lista de alumnos.
+ * * @author Jaime Fuertes Arana
+ * @version 1.0
  */
 public class Curso {
 
@@ -36,6 +37,11 @@ public class Curso {
         return s;
     }
 
+    /**
+     * Añade un alumno nuevo a la lista del curso.
+     * * @param p El objeto Persona que se va a matricular
+     */
+    
     public void aniadirAlumno(Persona p) {
         listaAlumnos.add(p);
     }
