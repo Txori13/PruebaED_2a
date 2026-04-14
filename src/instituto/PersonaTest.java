@@ -1,34 +1,18 @@
 package instituto;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import java.time.LocalDate;
+import static org.junit.jupiter.api.Assertions.*;
 
 class PersonaTest {
 
-	@BeforeAll
-	static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterAll
-	static void tearDownAfterClass() throws Exception {
-	}
-
-	@BeforeEach
-	void setUp() throws Exception {
-	}
-
-	@AfterEach
-	void tearDown() throws Exception {
-	}
-
-	@Test
-	void test() {
-		fail("Not yet implemented");
-	}
-
+    @Test
+    void testConstruccionYEdad() {
+        Persona p = new Persona(12345678, "Juan Perez", 'H', 1, 1, 2000);
+        
+        assertEquals("12345678-Z", p.getNif().toString());
+        
+        int edadEsperada = LocalDate.now().getYear() - 2000;
+        assertEquals(edadEsperada, p.getEdad());
+    }
 }
