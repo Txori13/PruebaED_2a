@@ -1,34 +1,18 @@
 package instituto;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 class CursoTest {
 
-	@BeforeAll
-	static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterAll
-	static void tearDownAfterClass() throws Exception {
-	}
-
-	@BeforeEach
-	void setUp() throws Exception {
-	}
-
-	@AfterEach
-	void tearDown() throws Exception {
-	}
-
-	@Test
-	void test() {
-		fail("Not yet implemented");
-	}
-
+    @Test
+    void aniadirAlumnoYToString() {
+        Curso curso = new Curso("Programacion");
+        Persona p1 = new Persona(11111111, "Ana Gomez", 'M', 10, 5, 2005);
+        
+        curso.aniadirAlumno(p1);
+        
+        String resultadoImpresion = curso.toString();
+        assertTrue(resultadoImpresion.contains("Ana"));
+    }
 }
